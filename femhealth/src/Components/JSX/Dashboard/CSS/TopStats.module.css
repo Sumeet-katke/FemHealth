@@ -1,0 +1,27 @@
+.statsContainer {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.statCard {
+  flex: 1;
+  background-color: #7091E6;
+  color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.statLabel {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.statSub {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #EDE9F5;
+}

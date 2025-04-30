@@ -1,0 +1,86 @@
+/* src/Components/Dashboard/HealthGraphs.module.css */
+.graphWrapper {
+    flex: 2;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .graphWrapper h3 {
+    color: #3D52A0;
+    margin-bottom: 1rem;
+  }
+/*###########################################------V3.0--------------########################*/
+
+  /* src/CSS/HealthGraphs.module.css */
+.graphWrapper {
+  background-color: #EDE9F5;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(61, 82, 160, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.graphWrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(61, 82, 160, 0.25);
+}
+
+.graphWrapper h3 {
+  margin-bottom: 1rem;
+  color: #3D52A0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #3D52A0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

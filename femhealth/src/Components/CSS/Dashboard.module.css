@@ -1,0 +1,127 @@
+/* Dashboard.module.css */
+
+.dashboard {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #ede9f5, #adbdda);
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #3D52A0;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    color: #8697C4;
+  }
+  
+  /* Stats Cards */
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .statCard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  
+  .statCard h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #7091E6;
+  }
+  
+  .statCard p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .riskLow {
+    color: #28a745;
+    font-weight: 600;
+  }
+  
+  /* Calendar + Graphs */
+  .bottomGrid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .calendarSection, .graphSection {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+  }
+  
+  .calendarSection h2, .graphSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #3D52A0;
+  }
+  
+  /* Chatbot + Reports */
+  .bottomMiniGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .chatbot, .detectionStatus {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .chatButton, .reportButton {
+    margin-top: 1rem;
+    background: #7091E6;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .chatButton:hover, .reportButton:hover {
+    background: #3D52A0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .statsGrid, .bottomGrid, .bottomMiniGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  }
+
+  

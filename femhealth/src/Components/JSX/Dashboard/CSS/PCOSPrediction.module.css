@@ -1,0 +1,50 @@
+.predictionContainer {
+  background-color: #EDE9F5;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* width: 100%; */
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #3D52A0;
+  text-align: center;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.barGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #3D52A0;
+}
+
+.progressWrapper {
+  background: #ADBBDa;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 14px;
+}
+
+.progress {
+  background: #7091E6;
+  height: 100%;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .predictionContainer {
+    padding: 1rem;
+  }
+}

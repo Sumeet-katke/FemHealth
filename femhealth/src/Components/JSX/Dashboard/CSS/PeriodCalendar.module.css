@@ -1,0 +1,12 @@
+/* src/Components/Dashboard/PeriodCalendar.module.css */
+.calendarWrapper {
+    flex: 1;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .calendarWrapper h3 {
+    color: #3D52A0;
+    margin-bottom: 1rem;
+  }

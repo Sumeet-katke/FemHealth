@@ -1,0 +1,112 @@
+/* src/Components/Dashboard/Dashboard.module.css */
+.dashboard {
+  top: 10vh;
+  display: grid;
+  grid-template-areas:
+    'topStats topStats topStats'
+    'periodTracker pcosPrediction chatbotPanel'
+    'healthAnalytics1 healthAnalytics2 tipAndArticles';
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #ede9f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative; /* Needed to scope modal placement */
+}
+
+.topStats { grid-area: topStats; }
+.periodTracker { grid-area: periodTracker; }
+.pcosPrediction { grid-area: pcosPrediction; }
+.chatbotPanel { grid-area: chatbotPanel; }
+.tipAndArticles { grid-area: tipAndArticles; }
+.healthAnalytics1 { grid-area: healthAnalytics1; }
+.healthAnalytics2 { grid-area: healthAnalytics2; }
+
+.periodTracker,
+.pcosPrediction,
+.chatbotPanel,
+.tipAndArticles,
+.healthAnalytics1,
+.healthAnalytics2 {
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-areas:
+      'topStats'
+      'periodTracker'
+      'pcosPrediction'
+      'chatbotPanel'
+      'healthAnalytics1'
+      'healthAnalytics2'
+      'tipAndArticles';
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modal Overlay - Fixed for page level */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Content Box */
+.modalContent {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.switchButton {
+  background-color: #7091E6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.switchButton:hover {
+  background-color: #3D52A0;
+}
+
+.closeModal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #3D52A0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

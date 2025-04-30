@@ -1,0 +1,318 @@
+.leftPanel {
+    flex: 1;
+    background: linear-gradient(to bottom right, #fbc2eb, #a6c1ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .leftContent h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .leftContent p {
+    font-size: 1.1rem;
+  }
+  
+
+.modalWrapper {
+    width: 100%;
+    /* min-height: 100vh; */
+    display: flex;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #7d7dc3;
+
+  }
+  
+  .leftBg {
+    width: 255px;
+    height: 536px;
+    position: absolute;
+    left: 0;
+    top: 536px;
+    background: #ADBBDA;
+    border-top-right-radius: 65px;
+    border-bottom-right-radius: 65px;
+    transform: rotate(180deg);
+    transform-origin: top left;
+    z-index: 1;
+  }
+  
+  .avatar {
+    width: 143px;
+    height: 143px;
+    position: absolute;
+    top: 173px;
+    left: 56px;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 332px;
+    left: 48px;
+    font-size: 31px;
+    font-weight: 600;
+    color: #3D52A0;
+    text-shadow: 0px 8px 12px rgba(61, 82, 160, 0.25);
+    z-index: 2;
+  }
+  
+  .rightPanel {
+    margin-left: 255px;
+    width: calc(100% - 255px);
+    background: #EDE8F5;
+    /* border-top-right-radius: 65px; */
+    /* border-bottom-right-radius: 65px; */
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .heading {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  
+  .label {
+    font-size: 15.5px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .floatingLabel {
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    font-size: 14px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    /* background-color: #EDE8F5; */
+    padding: 0 4px;
+  }
+  
+  .input:focus + .floatingLabel,
+  .input:not(:placeholder-shown) + .floatingLabel {
+    top: -8px;
+    left: 6px;
+    font-size: 22px;
+    color: #3D52A0;
+    font-weight: 600;
+  }
+  
+  .input {
+    height: 32px;
+    padding: 16px 8px 4px 8px;
+    border: none;
+    border-radius: 4px;
+    background: white;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .inputGroupHalf {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .registerButton {
+    width: 100%;
+    max-width: 257px;
+    height: 40px;
+    background: #ADBBDA;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 19px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+    margin: 16px auto;
+    transition: background 0.3s ease;
+  }
+  
+  @keyframes floatWiggle {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-5px) rotate(3deg);
+    }
+  }
+  
+  .registerButton:hover {
+    background: #9aa8c7;
+    animation: floatWiggle 1s infinite;
+  }
+  
+  .colorBoxes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .boxYellow,
+  .boxRed,
+  .boxBlue {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+  }
+  
+  .boxYellow {
+    background-color: #FFFF00;
+  }
+  
+  .boxRed {
+    background-color: #FF0000;
+  }
+  
+  .boxBlue {
+    background-color: #0000FF;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .leftBg,
+    .avatar,
+    .logo {
+      display: none;
+    }
+  
+    .modalWrapper {
+      flex-direction: column;
+    }
+  
+    .rightPanel {
+      margin-left: 0;
+      width: 100%;
+      border-radius: 0;
+      padding: 24px;
+    }
+  
+    .row {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .registerButton {
+      width: 100%;
+    }
+  
+    .heading {
+      font-size: 32px;
+      text-align: center;
+    }
+  }
+
+/* Backdrop */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Modal box */
+  .modalWrapper {
+    /* top: 20; */
+    top: 6vh;
+    width: 90%;
+    max-width: 700px;
+    background-color: #7d7dc3;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  /* Social signup wrapper */
+.socialSignup {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Individual social button */
+.socialButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.socialButton:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Icon inside button */
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .socialButton {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+}

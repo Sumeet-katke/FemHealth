@@ -1,0 +1,172 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #EDE8F5;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* =================== SECTION ==================== */
+  .aboutSection {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #EDE8F5, #e3dcf1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  /* =================== NAVBAR ==================== */
+  /* .navContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    position: sticky;
+    top: 1rem;
+  }
+  
+  .navItem {
+    color: #3D52A0;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .navItem:hover {
+    color: #ff7eb9;
+  } */
+  
+  /* =================== HEADINGS ==================== */
+  .heading {
+    margin-top: 4rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #3D52A0;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .description {
+    max-width: 700px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 400;
+    text-align: center;
+    margin: 2rem auto;
+    line-height: 1.6;
+    z-index: 2;
+  }
+  
+  /* =================== IMAGE PLACEHOLDER ==================== */
+  .imagePlaceholder {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    margin: 2rem auto;
+    background: url('../../assets/yourImage.svg') no-repeat center;
+    background-size: contain;
+    z-index: 2;
+  }
+  
+  /* =================== PARALLAX LAYERS ==================== */
+  .aboutSection::before,
+  .aboutSection::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .aboutSection::before {
+    background-image: url('../../assets/vector1.svg');
+    transform: translateY(-30%) scale(1.2);
+    opacity: 0.1;
+    animation: parallaxOne 30s linear infinite;
+  }
+  
+  .aboutSection::after {
+    background-image: url('../../assets/vector2.svg');
+    transform: translateY(-10%) scale(1.1);
+    opacity: 0.08;
+    animation: parallaxTwo 40s linear infinite;
+  }
+  
+  /* =================== PARALLAX ANIMATIONS ==================== */
+  @keyframes parallaxOne {
+    from {
+      transform: translateY(-30%) scale(1.2);
+    }
+    to {
+      transform: translateY(-20%) scale(1.2);
+    }
+  }
+  
+  @keyframes parallaxTwo {
+    from {
+      transform: translateY(-10%) scale(1.1);
+    }
+    to {
+      transform: translateY(-5%) scale(1.1);
+    }
+  }
+  
+  /* =================== RESPONSIVE ==================== */
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  
+    /* .navContainer {
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+    } */
+  
+    .imagePlaceholder {
+      max-width: 300px;
+    }
+  }
+  
+
+.bodySection {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 8vh;
+}
+
+/* .bodyContent {
+
+} */
