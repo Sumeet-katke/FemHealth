@@ -2,8 +2,8 @@ import React from 'react';
 import styles from '../CSS/AboutPCOS.module.css';
 import nurse from '../../assets/nurse.svg';
 import { motion } from 'framer-motion';
-import NavBar from '../../Components/JSX/NavBar';
-import PCOSCarousel from './PCOSCarousel';
+// import NavBar from '../../Components/JSX/NavBar';
+// import PCOSCarousel from './PCOSCarousel';
 
 const AboutPCOS = () => {
   return (

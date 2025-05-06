@@ -10,6 +10,7 @@
   gap: 1.5rem;
   padding: 2rem;
   background: #ede9f5;
+  overflow-x: hidden;
   min-height: 100vh;
   box-sizing: border-box;
   position: relative; /* Needed to scope modal placement */
@@ -110,3 +111,291 @@
   border: none;
   cursor: pointer;
 }
+
+.dashboard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topRow, .bottomRow {
+  display: flex;
+  gap: 20px;
+}
+
+.topRow > div, .bottomRow > div {
+  flex: 1;
+}
+
+/* Main Dashboard Layout */
+.dashboard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #f9f9f9;
+}
+
+.topStats, .bottomRow {
+  display: flex;
+  gap: 2rem;
+}
+
+.topRow > div, .bottomRow > div {
+  flex: 1;
+}
+
+.contentWrapper {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* PCOS Prediction and Detection Styling */
+.pcosPrediction {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.riskMessage {
+  background-color: #ffcc00;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #3D52A0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.takeTestButton {
+  padding: 10px 18px;
+  background-color: #7091E6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.takeTestButton:hover {
+  background-color: #3D52A0;
+}
+
+.bottomRow {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.pcosPrediction, .tipAndArticles, .detectionCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closeModal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #3D52A0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .topRow, .bottomRow {
+    flex-direction: column;
+  }
+
+  .pcosPrediction, .tipAndArticles, .detectionCard {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.healthAnalytics1 {
+  display: flex;
+  flex-direction: column;
+  gap : 2rem
+}
+
+.dashboard {
+  top: 10vh;
+  display: grid;
+  grid-template-areas:
+    'topStats topStats topStats'
+    'periodTracker pcosPrediction chatbotPanel'
+    'healthAnalytics1 healthAnalytics2 tipAndArticles';
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #ede9f5;
+  overflow-x: scroll;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.topStats { grid-area: topStats; }
+.periodTracker { grid-area: periodTracker; }
+.pcosPrediction { grid-area: pcosPrediction; }
+.chatbotPanel { grid-area: chatbotPanel; }
+.tipAndArticles { grid-area: tipAndArticles; }
+.healthAnalytics1 { grid-area: healthAnalytics1; }
+.healthAnalytics2 { grid-area: healthAnalytics2; }
+
+.periodTracker,
+.pcosPrediction,
+.chatbotPanel,
+.tipAndArticles,
+.healthAnalytics1,
+.healthAnalytics2 {
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: move; /* Indicate that the card is draggable */
+}
+
+.resizable {
+  cursor: se-resize;
+}
+
+/* Add styles for resizable boxes */
+.react-resizable {
+  border: 1px solid #ddd;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.react-resizable-handle {
+  background: #3D52A0;
+}
+
+.dashboard {
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.cardWrapper {
+  margin-bottom: 20px;
+  cursor: move; /* Indicate the card is draggable */
+}
+
+.cardContent {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resizable {
+  cursor: se-resize;
+}
+
+/* Optional: Apply styles when a card is being dragged */
+.cardWrapper:active {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-areas:
+      "topStats topStats"
+      "periodTracker pcosPrediction"
+      "chatbotPanel healthAnalytics1"
+      "healthAnalytics2 tipAndArticles";
+    grid-template-columns: repeat(2,1fr);
+    padding: 1.5rem;
+  }
+}
+
+/* Responsive: single column on mobile */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "topStats"
+      "periodTracker"
+      "pcosPrediction"
+      "chatbotPanel"
+      "healthAnalytics1"
+      "healthAnalytics2"
+      "tipAndArticles";
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .topStats {
+    flex-direction: column;
+  }
+}
+
+/* Responsive: small mobile */
+@media (max-width: 480px) {
+  .modalContent,
+  .dashboard {
+    padding: 0.75rem;
+  }
+  .modalContent {
+    width: 95%;
+  }
+}
+
+/* Responsive: watch-size */
+@media (max-width: 360px) {
+  .dashboard {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  .periodTracker,
+  .pcosPrediction,
+  .chatbotPanel,
+  .tipAndArticles,
+  .healthAnalytics1,
+  .healthAnalytics2 {
+    padding: 0.75rem;
+  }
+}
+.topStats {
+  overflow-x: auto ;
+}
+/* Modal styles remain unchanged */

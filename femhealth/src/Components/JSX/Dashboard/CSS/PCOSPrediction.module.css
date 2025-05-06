@@ -1,11 +1,12 @@
+/* Main Prediction Container */
 .predictionContainer {
   background-color: #EDE9F5;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* width: 100%; */
 }
 
+/* Heading */
 .heading {
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -13,6 +14,7 @@
   text-align: center;
 }
 
+/* Progress Bars */
 .bars {
   display: flex;
   flex-direction: column;
@@ -22,12 +24,23 @@
 .barGroup {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .label {
+  display: flex;
+  justify-content: space-between;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #3D52A0;
+  font-weight: 500;
+}
+
+.percentageText {
+  font-weight: 600;
+  color: #3D52A0;
+  font-size: 14px;
+  text-align: right;
 }
 
 .progressWrapper {
@@ -43,8 +56,207 @@
   border-radius: 20px;
 }
 
+/* Take Test Button */
+.takeTestButton {
+  margin-top: 24px;
+  padding: 10px 18px;
+  background-color: #7091E6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem
+}
+.takeTestButton:hover {
+  background-color: #3D52A0;
+}
+
+/* Modal Overlay (for form) */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Modal Content Box (for form) */
+.modalContent {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 800px;
+  gap:1.2rem;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Close Modal Button */
+.closeModal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #3D52A0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeModal:hover {
+  color: #7091E6;
+}
+
+/* Form Heading */
+.formHeading {
+  font-size: 2rem;
+  color: #3D52A0;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Step Titles */
+.stepTitle {
+  font-size: 1.5rem;
+  color: #3D52A0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form Inputs */
+.inputField,
+.selectField {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #3D52A0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus,
+.selectField:focus {
+  border-color: #7091E6;
+  outline: none;
+}
+
+/* Submit Button */
+.submitButton {
+  background-color: #7091E6;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #3D52A0;
+}
+
+/* Next Button */
+.nextButton {
+  padding: 10px 18px;
+  background-color: #7091E6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nextButton:hover {
+  background-color: #3D52A0;
+}
+
+/* Error Text */
+.errorText {
+  color: #FF5733;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Interactive Step Sections */
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.3); /* Glass effect */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading Animation */
+.loadingContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Result Section */
+.resultSection {
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.resultSection h3 {
+  font-size: 1.5rem;
+  color: #3D52A0;
+  font-weight: bold;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .predictionContainer {
+    padding: 1rem;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  .formHeading {
+    font-size: 1.8rem;
+  }
+
+  .step {
     padding: 1rem;
   }
 }

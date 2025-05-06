@@ -7,11 +7,15 @@ import ChatBotSection from './ChatBotSection';
 import HealthTips from './HealthTips';
 import HealthGraphs from './HealthGraphs';
 import { motion, AnimatePresence } from 'framer-motion';
+import PCOSDetection from './PCOSDetection'; // Import PCOSDetection
+import { useFemHealth } from '../../../../contexts/FemHealthContext';
 
 const Dashboard = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const {risk } = useFemHealth();
   const [modalContent, setModalContent] = useState('');
-
+  const [riskLevel, setRiskLevel] = useState(risk); // Set to the actual risk level from PCOSPrediction
+  console.log('Risk Level:', risk);
   const openModal = (title) => {
     setModalContent(title);
     setModalOpen(true);
@@ -19,20 +23,51 @@ const Dashboard = () => {
 
   const closeModal = () => setModalOpen(false);
 
+  const handleRiskLevelMessage = () => {
+    if (risk > 80) {
+      return (
+        <div className={styles.riskMessage}>
+          <h3>Your risk level is high!</h3>
+          <p>We recommend taking an image-based PCOS detection test to get a more accurate result.</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className={styles.dashboard}>
+      {/* Top Stats */}
       <div className={styles.topStats}><TopStats /></div>
-      <div className={styles.periodTracker}><PeriodTracker /></div>
-      <div className={styles.pcosPrediction}><PCOSPrediction /></div>
-      <div className={styles.chatbotPanel}><ChatBotSection/></div>
-      <div className={styles.tipAndArticles}>
-        <div className={styles.contentWrapper}><HealthTips/></div>
+
+      {/* First Row */}
+      <div className={styles.topRow}>
+        <div className={styles.periodTracker}><PeriodTracker /></div>
+
+        <div className={styles.healthAnalytics1}>
+          <div className={styles.contentWrapper}><HealthGraphs chartType="mood" /></div>
+          <div className={styles.contentWrapper}><HealthGraphs chartType="periodFlow" /></div>
+        </div>
+
+        <div className={styles.chatbotPanel}><ChatBotSection /></div>
       </div>
-      <div className={styles.healthAnalytics1}>
-        <div className={styles.contentWrapper}><HealthGraphs chartType="mood" /></div>
-      </div>
-      <div className={styles.healthAnalytics2}>
-        <div className={styles.contentWrapper}><HealthGraphs chartType="periodFlow" /></div>
+
+      {/* Second Row */}
+      <div className={styles.bottomRow}>
+        <div className={styles.pcosPrediction}>
+          <PCOSPrediction openModal={openModal} setRiskLevel={setRiskLevel} />
+          {handleRiskLevelMessage()}
+          <PCOSDetection openModal={openModal} closeModal={closeModal} />
+        </div>
+
+        {/* <div className={styles.tipAndArticles}> */}
+          <div className={styles.contentWrapper}><HealthTips /></div>
+        {/* </div> */}
+
+        <div className={styles.detectionCard}>
+          {/* Add Detection component here if available */}
+          {/* <Detection /> */}
+        </div>
       </div>
 
       {/* Modal */}
@@ -52,7 +87,7 @@ const Dashboard = () => {
             >
               <button className={styles.closeModal} onClick={closeModal}>×</button>
               <h2>{modalContent}</h2>
-              <p>This is a deep dive into {modalContent}. Here you could display extra graphs, insights or related health data.</p>
+              <p>This is a deep dive into {modalContent}. Here you could display extra graphs, insights, or related health data.</p>
             </motion.div>
           </motion.div>
         )}

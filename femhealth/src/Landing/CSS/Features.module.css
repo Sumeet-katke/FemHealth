@@ -3,7 +3,7 @@
   width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #EDE8F5, #e3dcf1);
-    /* display: flex; */
+    display: flex;
     /* flex-direction: column; */
     /* align-items: center; */
     /* justify-content: flex-start; */
@@ -12,7 +12,7 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-  /* } */
+
 }
 
 .heading {

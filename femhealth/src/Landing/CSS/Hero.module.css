@@ -351,3 +351,100 @@ max-width: 20vm;
     background-position: bottom right;
   }
 }
+
+/* Tablet and below: stack heading */
+@media (max-width: 768px) {
+  .headingBlock {
+    top: 45%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .welcome, .mainTitle, .subTitle {
+    text-align: center;
+  }
+  .mainTitle {
+    font-size: clamp(2rem, 10vw, 4.5rem);
+  }
+  .subTitle, .welcome {
+    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+  }
+  .cliffs img {
+    width: clamp(150px, 60vw, 400px);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .headingBlock {
+    top: 40%;
+    padding: 0 0.5rem;
+  }
+  .mainTitle {
+    font-size: clamp(1.8rem, 12vw, 3.5rem);
+  }
+  .subTitle {
+    font-size: clamp(0.9rem, 4vw, 1.5rem);
+  }
+  .welcome {
+    font-size: clamp(0.8rem, 4vw, 1.2rem);
+  }
+  .cliffs img {
+    width: 100vw;
+  }
+}
+
+/* Watch-size */
+@media (max-width: 360px) {
+  .headingBlock {
+    top: 35%;
+  }
+  .mainTitle {
+    font-size: clamp(1.5rem, 14vw, 2.5rem);
+  }
+  .subTitle, .welcome {
+    font-size: clamp(0.7rem, 5vw, 1rem);
+  }
+}
+
+/* Additional responsiveness */
+@media (max-width: 1024px) {
+  .landingWrapper {
+    min-height: 80vh;
+  }
+  .cliffs img {
+    width: clamp(250px, 50vw, 500px);
+  }
+}
+@media (max-width: 768px) {
+  .headingBlock {
+    top: 40vh;
+    width: 95%;
+  }
+  .mainTitle {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+  .subTitle,
+  .welcome {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+}
+@media (max-width: 480px) {
+  .headingBlock {
+    top: 35vh;
+  }
+  .cliffs img {
+    width: 100vw;
+  }
+}
+@media (max-width: 360px) {
+  .headingBlock {
+    top: 30vh;
+  }
+  .mainTitle {
+    font-size: clamp(1.5rem, 12vw, 2.5rem);
+  }
+  .subTitle,
+  .welcome {
+    font-size: clamp(0.8rem, 5vw, 1rem);
+  }
+}
