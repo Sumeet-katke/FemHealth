@@ -54,7 +54,7 @@ const PCOSDetection = () => {
       const form = new FormData();
       form.append('image', file);
 
-      const res = await fetch('/api/detect-pcos/', {
+      const res = await fetch('http://127.0.0.1:5000/api/pcos-detect/', {
         method: 'POST',
         headers: {
           'Authorization': token ? `Bearer ${token}` : ''
