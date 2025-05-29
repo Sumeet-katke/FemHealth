@@ -293,6 +293,8 @@ export const FemHealthProvider = ({ children }) => {
     }
   };
   const updateScore = async () => {
+    const token = Cookies.get('access_token') ?Cookies.get('access_token') : null;
+
     try {
       const res = await fetch('http://127.0.0.1:5000/api/pcos-detect/', {
         method: 'GET',

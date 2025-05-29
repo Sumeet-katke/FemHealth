@@ -16,10 +16,10 @@ const rootSections = [
 
 // Sections for Dashboard
 const dashboardSections = [
-  { id: 'predict', label: 'Predictor' },
-  { id: 'detector', label: 'Detector' },
-  { id: 'tracker', label: 'Tracker' },
-  { id: 'profile', label: 'Profile' },
+  // { id: 'predict', label: 'Predictor' },
+  // { id: 'detector', label: 'Detector' },
+  // { id: 'tracker', label: 'Tracker' },
+  // { id: 'profile', label: 'Profile' },
   { id: 'logout', label: 'Logout' }
 ];
 

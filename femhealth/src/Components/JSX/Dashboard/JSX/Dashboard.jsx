@@ -24,7 +24,7 @@ const Dashboard = () => {
   const closeModal = () => setModalOpen(false);
 
   const handleRiskLevelMessage = () => {
-    if (risk > 80) {
+    if (risk > 75) {
       return (
         <div className={styles.riskMessage}>
           <h3>Your risk level is high!</h3>

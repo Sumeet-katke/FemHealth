@@ -129,9 +129,20 @@ const PCOSPrediction = () => {
 
         const preds = res.data.predictions;
 
-        setRisk(preds[0].value);
-        setHormonal(preds[1].value);
-        setCycleIrregularity(preds[2].value);
+        // setRisk(preds[0].value);
+        // setHormonal(preds[1].value);
+        // setCycleIrregularity(parseInt(preds[2].value));
+        const parsedPreds = preds.map(p => ({
+          label: p.label,
+          value: parseFloat(p.value) || 0   // fallback to 0 if parse fails
+        }));
+
+        setPredictions(parsedPreds);
+        setAnimatedValues(parsedPreds.map(() => 0));
+
+        setRisk(parsedPreds[0].value);
+        setHormonal(parsedPreds[1].value);
+        setCycleIrregularity(parsedPreds[2].value);
       }
     } catch (err) {
       console.error('Prediction failed', err);
@@ -145,13 +156,18 @@ const PCOSPrediction = () => {
         needAuth: true      // no `body` here
       });
       if (res.status === 200) {
-        setPredictions(res.data.predictions);
-        setAnimatedValues(res.data.predictions.map(() => 0));
+        const _preds = res.data.predictions;
+        const parsedPreds = _preds.map(p => ({
+          label: p.label,
+          value: parseFloat(p.value) || 0   // fallback to 0 if parse fails
+        }));
+        setPredictions(parsedPreds);
+        setAnimatedValues(parsedPreds.map(() => 0));
 
-        const preds = res.data.predictions;
+        const preds = parsedPreds;
         setRisk(preds[0].value);
         setHormonal(preds[1].value);
-        setCycleIrregularity(preds[2].value);
+        setCycleIrregularity(parseFloat(preds[2].value));
       }
     } catch (err) {
       console.error('Fetch failed', err);
@@ -178,14 +194,14 @@ const PCOSPrediction = () => {
             <div className={styles.label}>
               {item.label}
               <span className={styles.percentageText}>
-                {animatedValues[i]}%
+                {parseFloat(animatedValues[i])}%
               </span>
             </div>
             <div className={styles.progressWrapper}>
             <motion.div
               className={styles.progress}
                 initial={{ width: '0%' }}
-                animate={{ width: `${item.value}%` }}
+                animate={{ width: `${item.value ?? 0}%` }}
                 transition={{ duration: 1 + i * 0.2 }}
                 style={getBarStyle(item.value)}
               />
