@@ -15,7 +15,7 @@ const ChatBotSection = () => {
 
   useEffect(() => {
     // Ensure the WebSocket URL includes the token as a query parameter
-    const socketUrl = `ws://localhost:8000/ws/chatbot/?token=${accessToken}`; // Use the accessToken here
+    const socketUrl = `wss://femhealth.onrender.com/ws/chatbot/?token=${accessToken}`; // Use the accessToken here
 
     socketRef.current = new WebSocket(socketUrl);
 

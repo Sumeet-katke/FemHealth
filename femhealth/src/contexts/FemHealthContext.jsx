@@ -122,7 +122,7 @@ export const FemHealthProvider = ({ children }) => {
     }
   
     try {
-      const response = await axios.post('http://127.0.0.1:5000/api/token/refresh/', {
+      const response = await axios.post('https://femhealth.onrender.com/api/token/refresh/', {
         refresh_token: refreshToken,
       });
   
@@ -170,7 +170,7 @@ export const FemHealthProvider = ({ children }) => {
   const handleLogin = async (loginData) => {
     try {
       const response = await APIFetcher({
-        url: 'http://127.0.0.1:5000/api/login/',  // Update with your backend API URL
+        url: 'https://femhealth.onrender.com/api/login/',  // Update with your backend API URL
         method: 'POST',
         body: loginData,
       });
@@ -226,7 +226,7 @@ export const FemHealthProvider = ({ children }) => {
   const handleRegister = async (registrationData) => {
     try {
       const response = await APIFetcher({
-        url: 'http://127.0.0.1:5000/api/register/',  // Update with your backend API URL
+        url: 'https://femhealth.onrender.com/api/register/',  // Update with your backend API URL
         method: 'POST',
         body: registrationData,
       });
@@ -251,7 +251,7 @@ export const FemHealthProvider = ({ children }) => {
   // fetch all cycle entries and store in context
   const fetchCycleEntries = async () => {
     const res = await APIFetcher({
-      url: 'http://127.0.0.1:5000/api/daily-entry/',
+      url: 'https://femhealth.onrender.com/api/daily-entry/',
       method: 'GET',
       needAuth: true,
     });
@@ -263,7 +263,7 @@ export const FemHealthProvider = ({ children }) => {
   const PredictPeriod = async () => {
 
     const res = await APIFetcher({
-      url: 'http://127.0.0.1:5000/api/predict-period/',  // Update with your backend API URL
+      url: 'https://femhealth.onrender.com/api/predict-period/',  // Update with your backend API URL
       method: 'GET',
       needAuth: true,
     });
@@ -296,7 +296,7 @@ export const FemHealthProvider = ({ children }) => {
     const token = Cookies.get('access_token') ?Cookies.get('access_token') : null;
 
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/pcos-detect/', {
+      const res = await fetch('https://femhealth.onrender.com/api/pcos-detect/', {
         method: 'GET',
         headers: {
           'Authorization': token ? `Bearer ${token}` : '',
