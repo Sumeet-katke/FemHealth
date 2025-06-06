@@ -39,7 +39,7 @@ const RegisterModal = ({ onClose }) => {
 
     try {
       const response = await APIFetcher({
-        url: 'http://127.0.0.1:5000/api/register/',
+        url: 'https://femhealth-backend.onrender.com/api/register/',
         method: 'POST',
         body: form,
       });
